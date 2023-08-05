@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  db:
+    image: postgres:14.7
+    env_file:
+      - .env
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  api:
+    build:
+      dockerfile: ./docker/prod/backend/Dockerfile
+      context: .
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    entrypoint: ./docker/prod/backend/wsgi-entrypoint.sh
+    env_file:
+      - .env
+    expose:
+      - 8000
+    depends_on:
+      - db
+
+  nginx:
+    build:
+      dockerfile: ./docker/prod/nginx/Dockerfile
+      context: ./docker/prod/nginx
+    env_file:
+      - .env
+    volumes:
+      - static:/app/static
+      - media:/app/media
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+
+volumes:
+  static:
+  media:
+  db:

@@ -1,6 +1,7 @@
 Django
+djangorestframework
 psycopg2-binary
 Pillow
-djangorestframework
 python-decouple
 drf-yasg
+django-cors-headers
