@@ -11,13 +11,13 @@ services:
 
   api:
     build:
-      dockerfile: ./docker/dev/backend/Dockerfile
+      dockerfile: ./docker/backend/Dockerfile
       context: .
     volumes:
       - static:/app/static
       - media:/app/media
       - .:/app
-    entrypoint: ./docker/dev/backend/wsgi-entrypoint.sh
+    entrypoint: ./docker/backend/asgi-entrypoint.sh
     env_file:
       - .env
     ports:

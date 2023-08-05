@@ -17,19 +17,18 @@ ___
 ### Чтобы запустить проект необходимо:
 
 - Склонировать репозиторий.
-  ```
-  git clone https://github.com/kermitlafrog61/LamaAi.git
-  ```
+```bash
+git clone https://github.com/kermitlafrog61/LamaAi.git
+```
 
 - Создать .env файл по примеру .env.template указынными в нем данными.
 
 - Запустить docker.
-
-  ```bash
-  make run
-  ```
+```bash
+make run
+```
 
 - Или для production.
-  ```bash
-  make run_dev
-  ```
+```bash
+make run_dev
+```

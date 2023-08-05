@@ -10,12 +10,12 @@ services:
 
   api:
     build:
-      dockerfile: ./docker/prod/backend/Dockerfile
+      dockerfile: ./docker/backend/Dockerfile
       context: .
     volumes:
       - static:/app/static
       - media:/app/media
-    entrypoint: ./docker/prod/backend/wsgi-entrypoint.sh
+    entrypoint: ./docker/backend/asgi-entrypoint.sh
     env_file:
       - .env
     expose:
@@ -25,8 +25,8 @@ services:
 
   nginx:
     build:
-      dockerfile: ./docker/prod/nginx/Dockerfile
-      context: ./docker/prod/nginx
+      dockerfile: ./docker/nginx/Dockerfile
+      context: ./docker/nginx
     env_file:
       - .env
     volumes:
