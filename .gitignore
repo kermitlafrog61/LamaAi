@@ -278,4 +278,7 @@ pyrightconfig.json
 .history
 .ionide
 
+# Llama
+storage/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,django

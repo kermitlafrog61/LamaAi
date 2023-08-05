@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN chmod +x asgi-entrypoint.sh
+RUN chmod +x docker/backend/asgi-entrypoint.sh

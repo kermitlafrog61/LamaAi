@@ -14,7 +14,6 @@ services:
       dockerfile: ./docker/backend/Dockerfile
       context: .
     volumes:
-      - static:/app/static
       - media:/app/media
       - .:/app
     entrypoint: ./docker/backend/asgi-entrypoint.sh
@@ -26,6 +25,5 @@ services:
       - db
 
 volumes:
-  static:
   media:
   db:

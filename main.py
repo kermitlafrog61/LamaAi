@@ -1,8 +1,8 @@
 from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from core.settings import settings
-from apps.bot.bot import StatefulChatbot
 from apps.utils.media import upload_file
+from apps.llama import query_engine
 
 
 # Defining FastAPI instance, adding middlewares
@@ -20,15 +20,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Creating BOT instance
 
-bot = StatefulChatbot()
-
-@app.post('question/')
-async def answer(question: str):
-    return {'answer': bot.answer_question(question)}
-
-
-@app.post('upload-file/')
-async def upload_file(file: UploadFile):
+@app.post('/upload-file')
+async def send_file(file: UploadFile):
     await upload_file(file)
+    return {'status': 'ok'}
+
+
+@app.post('/answer-question')
+async def answer_question(question: str):
+    responce = query_engine.query(question)
+    return {
+        'answer': responce,
+    }

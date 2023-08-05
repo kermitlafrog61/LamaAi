@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 
 class AppConfig(BaseSettings):
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent
     BASE_URL: str = 'http://localhost:8000'
     SECRET_KEY: str
     MEDIA_ROOT: Path = BASE_DIR / 'media'
@@ -15,7 +15,7 @@ class AppConfig(BaseSettings):
 class DatabaseConfig(BaseSettings):
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
-    POSTGRES_HOST: str
+    POSTGRES_HOST: str = 'db'
     POSTGRES_DB: str
 
     @property
@@ -28,7 +28,11 @@ class DatabaseConfig(BaseSettings):
         )
 
 
-class Settings(AppConfig, DatabaseConfig):
+class OpenAIConfig(BaseSettings):
+    OPENAI_API_KEY: str
+
+
+class Settings(AppConfig, DatabaseConfig, OpenAIConfig):
     pass
 
 
