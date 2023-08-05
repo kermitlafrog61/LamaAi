@@ -9,9 +9,9 @@ ___
 
 ![Flutter](https://img.shields.io/badge/-DjangoRESTFramework-yellow?style=for-the-badge&logo=python)
 
-![Flutter](https://img.shields.io/badge/-psycopg2-binary-yellow?style=for-the-badge&logo=python)
+![Flutter](https://img.shields.io/badge/-psycopg2%20binary-yellow?style=for-the-badge&logo=python)
 
-![Flutter](https://img.shields.io/badge/-drf-yasg-yellow?style=for-the-badge&logo=python)
+![Flutter](https://img.shields.io/badge/-drf%20yasg-yellow?style=for-the-badge&logo=python)
 
 
 ### Чтобы запустить проект необходимо:
