@@ -15,6 +15,7 @@ services:
       context: .
     volumes:
       - media:/app/media
+      - storage:/app/storage
       - .:/app
     entrypoint: ./docker/backend/asgi-entrypoint.sh
     env_file:
@@ -27,3 +28,4 @@ services:
 volumes:
   media:
   db:
+  storage:
