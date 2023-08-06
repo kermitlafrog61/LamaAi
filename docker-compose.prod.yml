@@ -24,7 +24,7 @@ services:
 
   nginx:
     build:
-      dockerfile: ./docker/nginx/Dockerfile
+      dockerfile: Dockerfile
       context: ./docker/nginx
     env_file:
       - .env

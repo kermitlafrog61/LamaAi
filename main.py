@@ -31,5 +31,5 @@ async def send_file(file: UploadFile):
 async def answer_question(question: str):
     responce = query_engine.query(question)
     return {
-        'answer': responce,
+        'answer': responce.response,
     }

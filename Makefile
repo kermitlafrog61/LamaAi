@@ -2,7 +2,7 @@ run:
 	docker compose up -d --build
 
 run_prod:
-	docker compose -f docker-compose-prod.yml up -d --build
+	docker compose -f docker-compose.prod.yml up -d --build
 
 bash:
 	docker compose exec -it api bash

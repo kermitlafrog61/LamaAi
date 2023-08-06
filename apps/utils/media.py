@@ -17,4 +17,3 @@ async def upload_file(file: UploadFile):
 
     with open(settings.MEDIA_ROOT / file.filename, "wb") as f:
         f.write(await file.read())
-    os.remove(settings.BASE_DIR / 'apps' / '__pycache__' / 'llama.cpython-310.pyc')
